@@ -15,3 +15,10 @@
   https://cactus.tistory.com/193
 
 ## Develop Map
+
+- 외부라이브러리 -https://p5js.org/ko/
+- 3D image carousel in pure JavaScript and CSS
+- https://lucidar.me/en/web-dev/building-a-carousel-in-vanilla-js-css/
+- 10 Best JavaScript & CSS Carousel Libraries
+- https://www.cssscript.com/top-10-javascript-css-carousels/
+- 폰트 https://fonts.google.com/specimen/Roboto
