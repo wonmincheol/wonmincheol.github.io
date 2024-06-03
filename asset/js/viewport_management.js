@@ -4,8 +4,84 @@ const Section_List = document.getElementsByTagName('section');
 var Section_Name_List = new Array(Section_List.length);
 var Section_Id_List = new Array(Section_List.length);
 
+//defaultPageLoad()
+
+window.addEventListener('resize', defaultPageLoad);
+function defaultPageLoad() {
+    ControlSectionInViewport();
+    initMail();
+    startInterval();
+    canvasDraw();
+}
 
 
+//canvas
+{
+    var canvas_width;
+    function canvasDraw() {
+        canvas_width = window.innerWidth * 0.27;
+        var canvas = document.getElementById('canvasID');
+        var ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+
+        var imgsrc = new Image();
+        imgsrc.src = 'asset/image/graph.png'
+
+        imgsrc.addEventListener('load', () => {
+            ctx.drawImage(imgsrc, 0, 0, canvas_width, canvas.height);
+            ctx.fillStyle = '#000';
+            ctx.fillText("측정 주기", canvas_width * 0.5, canvas.height * 0.2);
+            ctx.fillText("측정 시간", canvas_width * 0.5, canvas.height * 0.8);
+        })
+        
+        
+        
+    }
+
+}
+
+//vr
+{
+    var xAngle = 0, yAngle = 0;
+    var vr = document.getElementById('VR');
+    var timer = 0;
+    function rotationVR() {
+        // console.log('rotate');
+        timer += 1;
+        xAngle = Math.sin(timer)*3;
+        yAngle = 180+Math.sin(timer)*5;
+
+        vr.style.transform = 'rotate(' + xAngle + 'deg)';
+        vr.style.transform = 'skew(' + yAngle + 'deg)';
+    }
+    function startInterval() {
+        var rotateInterval = setInterval(() => rotationVR(), 100);
+    }
+}
+
+//mail
+{
+    
+function mailViewOpen() {
+    var mailView = document.getElementsByClassName('mailView')[0];
+    mailView.classList.add('mailShower');
+    mailView.style.zIndex = 100;
+}
+function mailViewClose() {
+    var mailView = document.getElementsByClassName('mailView')[0];
+    mailView.classList.remove('mailShower');
+    mailView.style.zIndex = -1;
+    
+}
+function initMail() {
+    console.log('load');
+    document.getElementById('mailViewOpen').onclick = mailViewOpen;
+    document.getElementById('mailIframe').contentWindow.document.getElementById('mailViewClose').onclick = mailViewClose;
+}
+
+
+}
 // aside 
 {
 
@@ -20,7 +96,6 @@ for (var i = 0; i < Section_List.length; i++){
     var name_href = document.createElement('a');
     name_href.classList.add('item');
     name_href.setAttribute('href', '#' + Section_Id_List[i]);
-    // name_href.setAttribute('href', 'www.naver.com');
     name_href.innerText = Section_Name_List[i];
     Aside_Item.appendChild(name_href);
 }
@@ -78,6 +153,7 @@ for (var i = 0; i < links.length; i++){
                     window.scrollTo({
                         top: document.querySelector('#'+id).offsetTop - offset,
                         behavior: 'smooth'
+                        
         });
                 }
             }
@@ -89,12 +165,10 @@ for (var i = 0; i < links.length; i++){
 
         for (var i = 0; i < Sections.length; i++){
             var section = Sections[i].getBoundingClientRect();
-            var offset = 200;
+            var ViewportHeight = (window.innerHeight || document.documentElement.clientHeight);
             if (
-                section.top >= -offset &&
-                section.left >= -offset &&
-                section.bottom <= (window.innerHeight || document.documentElement.clientHeight)+offset &&
-                section.right <= (window.innerWidth || document.documentElement.clientWidth)+offset
+                section.bottom >= 0 &&
+                section.top <= ViewportHeight
             ) {
                 Sections[i].classList.add('section_shower');
             }
@@ -106,6 +180,7 @@ for (var i = 0; i < links.length; i++){
 
     window.addEventListener('scroll', function () {
         ControlSectionInViewport();
-        CorViewport();
+        
+        // CorViewport();
     });
 }

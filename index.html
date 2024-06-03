@@ -6,10 +6,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="/asset/style/Main.css" />
   </head>
-  <body>
+  <body onload="defaultPageLoad()">
     <header>
-      <h1>Mincho</h1>
+      <h1>Mincheol</h1>
     </header>
+    <header_right>
+      <img
+        id="mailViewOpen"
+        src="https://img.icons8.com/?size=100&id=53388&format=png&color=000000"
+      />
+    </header_right>
+
+    <div class="mailView">
+      <iframe
+        id="mailIframe"
+        style="width: 100%; height: 100%"
+        src="asset/sub_site/mail.html"
+        frameborder="0"
+      ></iframe>
+    </div>
 
     <nav></nav>
 
@@ -18,34 +33,235 @@
       <div id="itemlist"></div>
     </aside>
 
-    <section id="sec01" data-section-name="오프닝">
-      <div class="Content_Div"></div>
-      <div>
-        <span>오프닝</span>
-        <span>오프닝</span>
+    <section
+      style="height: 100%; flex-direction: column"
+      id="sec00"
+      data-section-name="타이틀"
+    >
+      <span id="VR">
+        <a style="color: red; font-size: 100px">V</a
+        ><a style="color: blue; font-size: 100px">R</a>
+      </span>
+      <p class="title pShadow">개발자를</p>
+      <p class="title pShadow">꿈꾸는 사람</p>
+    </section>
+
+    <section
+      style="flex-direction: column"
+      id="sec01"
+      data-section-name="자기소개"
+    >
+      <p class="title">저는 이런 사람입니다.</p>
+      <div id="profil">
+        <div id="profil_img">
+          <img src="https://avatars.githubusercontent.com/u/59256157?v=4" />
+        </div>
+        <p>원민철<br />공주대학교 소프트웨어학과 전공</p>
       </div>
+      <span class="detail">
+        <table>
+          <tr>
+            <td>
+              <div class="profilDetail">
+                <div class="detailTop">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=ejWH1rV3IppT&format=png&color=000000"
+                  />
+                </div>
+                <div class="detailBotton">
+                  <p>생년월일 : 2001.04.26</p>
+                  <p>성별 : 남</p>
+                  <p>전화번호 : 010-1234-5678</p>
+                  <p>이메일 : mnmkjmin2896@gmail.com</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="profilDetail">
+                <div class="detailTop">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=85428&format=png&color=000000"
+                  />
+                </div>
+                <div class="detailBotton">
+                  <p>2020 - 공주대학교 컴퓨터공학부 입학</p>
+                  <p>2022 - 육군 병장 전역</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="profilDetail">
+                <div class="detailTop">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=87194&format=png&color=000000"
+                  />
+                </div>
+                <div class="detailBotton">
+                  <p>주력 언어 : C, Java</p>
+                  <p>Engine : Unity</p>
+                  <p>Studying : html, mobile</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="profilDetail">
+                <div class="detailTop">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=90200&format=png&color=000000"
+                  />
+                </div>
+                <div class="detailBotton">
+                  <p>2018~2019 - "XX산 생태계 조사"</p>
+                  <p>2023 - 대화형 기반 암호화 알고리즘 구현</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </span>
     </section>
 
     <section id="sec02" data-section-name="소개">
-      <div class="Content_Div"></div>
+      <img style="width: 40%" src="asset/image/scratch.png" alt="" />
+      <div>
+        <p class="pTitle">운명 같은 만남</p>
+        <p>
+          저에게는 운명같은 만남이 고교시절에 있었습니다. 그저 지나가는
+          수업이였죠, 해당 수업은 스크래치라는 프로그램을 이용해 자유롭게
+          제작하는 과제를 저에게 주었습니다.
+        </p>
+      </div>
     </section>
 
-    <section id="sec03" data-section-name="관심 기술">
-      <div class="Content_Div"></div>
+    <section id="sec03" data-section-name="">
+      <div>
+        <p class="pTitle">그 결과?</p>
+        <p>
+          당시 같은 팀원이였던 친구는 저에게 갤러그와 같은 게임을 만들어 보길
+          권유했고, 저또한 흥미가 생겨 동의하였고, 배운것을 토대로 하나하나
+          만들고 연구한 결과 학년 1등을 하였습니다.
+        </p>
+      </div>
+      <video
+        src="asset/video/galagaVideo.mp4"
+        muted
+        autoplay
+        playsinline
+        loop
+      ></video>
     </section>
 
-    <section id="sec04" data-section-name="관심 기업">
-      <div class="Content_Div"></div>
+    <section id="sec04" data-section-name="">
+      <img style="width: 40%" src="asset/image/unity.png" alt="" />
+      <div>
+        <p class="pTitle">진학</p>
+        <p>
+          이때의 경험을 잊을수 없었던 저는 비슷한 프로그램을 찾기 시작했습니다.
+          결국 Unity를 처음 접하고, 이를 공부하는 개발동아리에도 참여해 다양한
+          작품들을 만들었고, 대학에서도 필요하다 생각했던 컴퓨터공학를
+          전공하였고, 이제는 실제로 게임을 만들어보고자 게임개발동아리에서
+          활동하였습니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec04" data-section-name="">
+      <div>
+        <p class="pTitle">성장</p>
+        <p>
+          저는 이런 과정에서 만들어가는 즐거움을 느끼고, 저에게 필요한 역량을
+          길렀습니다. 무엇보다 스스로 목표를 정하고, 기술을 탐구해나가는 과정을
+          경험한것이 저에게 많은것을 가져다 주었습니다. 저는 이런 과정이
+          있었기에 지금에 안도하지 않고, 꾸준히 발전해 나아갈 것입니다.
+        </p>
+      </div>
+      <img style="width: 40%" src="asset/image/growth.png" alt="" />
+    </section>
+    <section id="sec05" data-section-name="목표">
+      <img style="width: 40%" src="asset/image/imagineToReal.png" alt="" />
+      <div>
+        <p class="pTitle">생각을 현실로 만들어 전달하는 사람</p>
+        <p>
+          사람들은 다양한 매체에서 상상력을 자극받습니다. 그리고 자신만의 상상을
+          하게됩니다. 사람들은 이를 그저 상상에서 멈추지만 저는 이를 매체로
+          나타내고자 합니다. 특히 AR, VR기술에 흥미를 갖고 있는데, A사의 비전
+          프로와 같은 기기를 이용해 현실에 증강현실을 적용해 "레디 플레이어
+          원"과 같은 기술을 구현하는것이 목표입니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec06" data-section-name="사회 이슈">
+      <div>
+        <p class="pTitle">딥페이크 기술은 신뢰할수 있을까?</p>
+        <p>
+          최근에 보았던 뉴스중 가장기억에 남았던 것은 우크라이나-러시아 전쟁에서
+          악용된 딥페이크 기술이다. 해당 사건에서는 우크라이나의 젤렌스키
+          대통령이 러시아에게 항복한다는 내용을 딥페이크 기술로 만들어 내어
+          전쟁에 혼란을 주었다. 어떠한 기술이든 활용을 어떻게 하냐에 따라
+          장단점이 갈린다고 생각한다. 또한 이런 악용의 여지가 조금이라도 있는
+          기술일 수록 방안이 마련되야 한다고 생각합니다. 예를 들어 AR, VR와 같은
+          기술을 적용할때 사람이 인지하기 어려운 "비가시적 워터마킹"을 적용하여
+          이를 방지 할수 있다고 생각한다.
+        </p>
+      </div>
+      <img style="width: 40%" src="asset/image/deepfake.png" alt="" />
+    </section>
+
+    <section id="sec07" data-section-name="경험">
+      <div style="width: 40%">
+        <canvas id="canvasID" width="" height="200px"></canvas>
+        <img style="width: 100%" src="asset/image/salamander.png" alt="" />
+      </div>
+      <div>
+        <p class="pTitle">기술적 성장</p>
+        <p>
+          "XX산 하천에서 도롱뇽 서식 가능성"에 대해 연구를 진행할때 저는
+          지속적으로 수질 측정을 위한 장치를 개발중이였는데, 아두이노에 내장되어
+          있던 저장장치인 EEPROM은 기술적으로 한계가 명확했는데 바로 느린 속도,
+          기록 횟수가 제한된다는 것이다. 장기간 많은 데이터를 필요로 했던 목표에
+          적절하지 않았다. 이에 대한 해결방법은 두가지로 첫째 다른 비휘발성
+          메모리를 사용, 둘째 측정 주기, 기록 방식 최적화, 이와 같이 나뉘였다.
+          최종적으로 사용한 해결 방안은 두번째 방식으로 하였는데, 그 이유로는
+          서식 가능성을 측정하기 위해서는 짧은 주기의 측정이 불필요하며, 측정한
+          값들을 지시해주는 문자열을 제거하고 인덱스를 이용해 구분하므로서
+          최적화 할수 있었다.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec08" data-section-name="계획">
+      <div>
+        <p class="pTitle">앞으로는 어떻게 할까?</p>
+        <p>
+          보다 현실적이고, 정확한 VR, AR 기술을 제공하기 위한 기술에 관심을 갖고
+          있습니다. 컴투스로카는 "다크스워드: 배틀 이터니티"는 VR기술을 게임에
+          접목 시킨 국내 선두 기업으로 "버츄익스"와 협업해 기존의 VR기기에
+          트레드밀 기기를 접목시켜 보다 발전된 VR을 제시하였다. 특히 게임을
+          구동한 PICO는 내장된 여러 카메라를 이용한 고정밀 매핑과 이를 적용할
+          그래픽 기술이 발전시켰다.
+        </p>
+        <p>
+          VR기술을 개발하기 위해서는 컴퓨터 그래픽스의 학습이 선행된다. 각종
+          센서로 매핑된 주변 환경에 각종 그래픽을 적용할 트래킹 기술에대한
+          학습과 부족한 기기 처리능력을 보완해줄 최적화 및 네트워크 기술 부분의
+          역량이 필요할것으로 예상된다. 이를 늘리기 위해 학부융합과 같은 팀
+          프로젝트에서 "컴퓨터 그래픽스", "네트워크", "코드 최적화 기법"과 같은
+          부분의 역량과 이를 증빙할 포트폴리오를 준비하고자 한다.
+        </p>
+      </div>
+      <img style="width: 40%" src="asset/image/appleVision.png" alt="" />
     </section>
 
     <footer>
-      <h6>test</h6>
+      <h6>email : mnmkjmin2896@gmail.com&nbsp;&nbsp;tel : 010-1234-1234</h6>
       <hr />
-
-      <h6>© Copyright CyIVA. All Rights Reserved</h6>
+      <h6>© Copyright CyIVA.&nbsp;&nbsp; All Rights Reserved</h6>
       <h6 id="since_year">since 2017-</h6>
     </footer>
-
     <script src="/asset/js/viewport_management.js"></script>
   </body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgba(37, 37, 37, 0.814);
+        width: 100%;
+        height: 100vh;
+      }
+      header_right {
+        position: fixed;
+        display: flex;
+        height: 100px;
+        right: 1%;
+      }
+      header_right img {
+        filter: invert(1);
+        scale: 0.5;
+      }
+      #mailSheet {
+        position: fixedr;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+      }
+      td {
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+      }
+      textarea {
+        width: 97%;
+        height: 6em;
+        resize: none;
+        /* border: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <header_right>
+      <img
+        id="mailViewClose"
+        src="https://img.icons8.com/?size=100&id=111056&format=png&color=000000"
+      />
+    </header_right>
+    <div id="mailSheet">
+      <form id="forms" style="margin: 0 auto">
+        <table border="1" bgcolor="white">
+          <tr>
+            <td colspan="2">이메일 문의</td>
+          </tr>
+          <tr>
+            <td>이메일</td>
+            <td>
+              <input type="email" placeholder="답변을 받을 메일을 작성" />
+            </td>
+          </tr>
+          <tr>
+            <td>제목</td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>내용</td>
+            <td><textarea name="content" id="content"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><button id="sub" type="submit">전송</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <script>
+      var sub = document.getElementById("forms");
+      sub.addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    </script>
+    z
+  </body>
+</html>
