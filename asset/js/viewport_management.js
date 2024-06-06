@@ -55,8 +55,9 @@ function defaultPageLoad() {
         vr.style.transform = 'rotate(' + xAngle + 'deg)';
         vr.style.transform = 'skew(' + yAngle + 'deg)';
     }
+    var rotateInterval;
     function startInterval() {
-        var rotateInterval = setInterval(() => rotationVR(), 100);
+        rotateInterval = setInterval(() => rotationVR(), 100);
     }
 }
 
